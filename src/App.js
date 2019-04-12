@@ -8,7 +8,18 @@ class App extends Component {
 			{name: 'Andy', profession: 'Aspiring Cook'},
 			{name: 'Alex', profession: 'Psychologist'},
 			{name: 'Anne', profession: 'Web Developer'}
-		]
+		],
+		vampires: 'Some other form of persons.'
+	}
+	switchNameHandler = () => {
+		// console.log("I was clicked")
+		this.setState ({
+			persons: [
+				{name: 'Andy Blanchard', profession: 'Aspiring Cook'},
+				{name: 'Alex', profession: 'Psychologist'},
+				{name: 'Anne', profession: 'Web Developer'}
+			]
+		})
 	}
   render() {
     return (
@@ -18,6 +29,7 @@ class App extends Component {
         <Person name={this.state.persons[0].name} profession={this.state.persons[0].profession}>My hobbies: Pinterest Cooking, Instagram Exhibition.</Person>
         <Person name={this.state.persons[1].name} profession={this.state.persons[1].profession}/>
         <Person name={this.state.persons[2].name} profession={this.state.persons[2].profession}/>
+        <button onClick={this.switchNameHandler}>SwitchName</button>
       </div>
     );
   }

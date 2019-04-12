@@ -29,6 +29,8 @@ ___
 * Passing props as an attribute. 
 * Passing children through props.
 * Creating and accessing state property in the App class.
+* Methods and onClick handler.
+* How to update state: the states merge preserving the data that hasn't been overwriten.
 
 [1] [React vs Vue.js Comparison](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
 [2] [React Course with Maximilian on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/)
