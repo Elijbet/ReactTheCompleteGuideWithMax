@@ -31,6 +31,9 @@ ___
 * Creating and accessing state property in the App class.
 * Methods and onClick handler.
 * How to update state: the states merge preserving the data that hasn't been overwriten.
+* Using functional components vs classes: useState() Hook for state manipulation. With hooks the state is not merged, but replaced.
+* Stateless/Presentational/Dumb vs Stateful/Containers/Smart components. Use a lot of the first and a lot less of the second.
+* Passing method references between components. Use bind instead of function syntax, since the latter executes to often and is inefficient.
 
 [1] [React vs Vue.js Comparison](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
 [2] [React Course with Maximilian on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/)
