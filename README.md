@@ -40,6 +40,8 @@ ___
 * Handling dynamic content "The JavaScript Way".
 * Outputting lists.
 * Lists and state.
+* Updating state immutably, without mutating the original state. With the help of creating copy of the state array with a spread operator. 
+* For react to update lists efficiently, instead of rerendering the whole list, the elements need to have a key that is a unique ID. This cannot be an index, since index changes as we add and remove items. 
 
 [1] [React vs Vue.js Comparison](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
 [2] [React Course with Maximilian on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/)

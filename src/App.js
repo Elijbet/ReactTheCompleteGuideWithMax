@@ -5,9 +5,9 @@ import Person from './Person/Person'
 class App extends Component {
 	state = {
 		persons: [
-			{name: 'Andy', profession: 'Aspiring Cook'},
-			{name: 'Alex', profession: 'Psychologist'},
-			{name: 'Anne', profession: 'Web Developer'}
+			{id: 'efdf2d', name: 'Andy', profession: 'Aspiring Cook'},
+			{id: 'efdf3d', name: 'Alex', profession: 'Psychologist'},
+			{id: 'efdf4d', name: 'Anne', profession: 'Web Developer'}
 		],
 		vampires: 'Some other form of persons.',
 		showPersons: false
@@ -24,7 +24,8 @@ class App extends Component {
 	}
 
 	deletePersonHandler = (personIndex) => {
-		const persons = this.state.persons;
+		//make a copy of the array, instead of direcly modifying the original state.
+		const persons = [...this.state.persons];
 		persons.splice(personIndex, 1);
 		this.setState({persons: persons})
 	}
@@ -49,7 +50,8 @@ class App extends Component {
 	  				return <Person 
 	  				click={() => this.deletePersonHandler(index)}
 	        	name={person.name} 
-	        	profession={person.profession}> My hobbies: Pinterest Cooking, Instagram Exhibition.
+	        	profession={person.profession}
+	        	key={person.id}> My hobbies: Pinterest Cooking, Instagram Exhibition.
 	        </Person>
 	  			})}
 	      </div>
