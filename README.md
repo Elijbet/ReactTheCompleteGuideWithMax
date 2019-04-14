@@ -37,6 +37,7 @@ ___
 * Adding two way binding. 
 * Adding styleing with stylesheets.
 * Rendering content conditionally. React is purely JS, so we don't use HTML directives to conditionally display something, but JS logic. In this case a ternary operator. 
+* Handling dynamic content "The JavaScript Way".
 
 [1] [React vs Vue.js Comparison](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
 [2] [React Course with Maximilian on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/)
