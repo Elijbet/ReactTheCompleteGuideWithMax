@@ -12,16 +12,7 @@ class App extends Component {
 		vampires: 'Some other form of persons.',
 		showPersons: false
 	}
-	switchNameHandler = (newName) => {
-		// console.log("I was clicked")
-		this.setState ({
-			persons: [
-				{name: newName, profession: 'Aspiring Cook'},
-				{name: 'Alex', profession: 'Psychologist'},
-				{name: 'Anne', profession: 'Web Developer'}
-			]
-		})
-	}
+
 	nameChangedHandler = (event) => {
 		this.setState ({
 			persons: [
@@ -31,6 +22,13 @@ class App extends Component {
 			]
 		})
 	}
+
+	deletePersonHandler = (personIndex) => {
+		const persons = this.state.persons;
+		persons.splice(personIndex, 1);
+		this.setState({persons: persons})
+	}
+
 	togglePersonsHandler = () => {
 		const doesShow = this.state.showPersons;
 		this.setState({showPersons: !doesShow});
@@ -47,21 +45,13 @@ class App extends Component {
   	if(this.state.showPersons){
   		persons = (
 	  		<div>
-	        <Person 
-	        	name="Max" 
-	        	profession="Interior Designer"/>
-	        <Person 
-	        	name={this.state.persons[0].name} 
-	        	profession={this.state.persons[0].profession}>My hobbies: Pinterest Cooking, Instagram Exhibition.
+	  			{this.state.persons.map((person, index) => {
+	  				return <Person 
+	  				click={() => this.deletePersonHandler(index)}
+	        	name={person.name} 
+	        	profession={person.profession}> My hobbies: Pinterest Cooking, Instagram Exhibition.
 	        </Person>
-	        <Person 
-	        	name={this.state.persons[1].name} 
-	        	profession={this.state.persons[1].profession}
-	        	click={() => this.switchNameHandler('Maximilian!!')}
-	        	changed={this.nameChangedHandler}/>
-	        <Person 
-	        	name={this.state.persons[2].name} 
-	        	profession={this.state.persons[2].profession}/>
+	  			})}
 	      </div>
       )
   	}
