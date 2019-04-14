@@ -13,14 +13,24 @@ class App extends Component {
 		showPersons: false
 	}
 
-	nameChangedHandler = (event) => {
-		this.setState ({
-			persons: [
-				{name: 'Andy', profession: 'Aspiring Cook'},
-				{name: event.target.value, profession: 'Psychologist'},
-				{name: 'Anne', profession: 'Web Developer'}
-			]
-		})
+	nameChangedHandler = (event, id) => {
+		const personIndex = this.state.persons.findIndex(p => {
+			return p.id === id;
+		});
+
+		//this is a more modern approach to reassigning objects than the one below.
+		const person = {
+			...this.state.persons[personIndex]
+		};
+		//alternative approach
+		//const person = Object.assign({}, this.state.persons[personIndex])
+
+		person.name = event.target.value;
+
+		const persons = [...this.state.persons];
+		persons[personIndex] = person;
+
+		this.setState ({persons: persons})
 	}
 
 	deletePersonHandler = (personIndex) => {
@@ -51,7 +61,8 @@ class App extends Component {
 	  				click={() => this.deletePersonHandler(index)}
 	        	name={person.name} 
 	        	profession={person.profession}
-	        	key={person.id}> My hobbies: Pinterest Cooking, Instagram Exhibition.
+	        	key={person.id}
+	        	changed={(event) => this.nameChangedHandler(event, person.id)}> My hobbies: Pinterest Cooking, Instagram Exhibition.
 	        </Person>
 	  			})}
 	      </div>
