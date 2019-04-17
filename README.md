@@ -45,6 +45,10 @@ ___
 * Flexible lists: how to make components have individual input fields, independent of each other. 
 * Setting styles dynamically (Javascript style!).
 * Setting class names dynamically.
+* Adding and using Radium. Radium is a set of tools to manage inline styles on React elements. It gives you powerful styling capabilities without CSS [3]. Allows use of pseudo selectors and media queries.
 
-[1] [React vs Vue.js Comparison](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
+
+
+[1] [React vs Vue.js Comparison of Popular Frameworks](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
 [2] [React Course with Maximilian on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/)
+[3] [Radium](https://github.com/FormidableLabs/radium)
