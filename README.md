@@ -43,10 +43,10 @@ ___
 * Updating state immutably, without mutating the original state. With the help of creating copy of the state array with a spread operator. 
 * For react to update lists efficiently, instead of rerendering the whole list, the elements need to have a key that is a unique ID. This cannot be an index, since index changes as we add and remove items. 
 * Flexible lists: how to make components have individual input fields, independent of each other. 
-* Setting styles dynamically (Javascript style!).
+* Setting styles dynamically (Javascript style).
 * Setting class names dynamically.
 * Adding and using Radium. Radium is a set of tools to manage inline styles on React elements. It gives you powerful styling capabilities without CSS [3]. Allows use of pseudo selectors and media queries.
-
+* Enabling CSS modules. 
 
 
 [1] [React vs Vue.js Comparison of Popular Frameworks](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
