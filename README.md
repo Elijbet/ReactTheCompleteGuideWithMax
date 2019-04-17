@@ -50,6 +50,7 @@ ___
 
 >This is what is meant by styles being scoped. They are scoped to particular templates. If we have a buttons.css file we would import it only into a buttons.js template and a .btn class within would be inaccessible to some other template (e.g. forms.js), unless we imported it specifically there too.[4]
 
+* Adding pseudo selectors.
 
 
 [1] [React vs Vue.js Comparison of Popular Frameworks](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
