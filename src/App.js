@@ -46,7 +46,8 @@ class App extends Component {
 	}
   render() {
   	const style = {
-  		backgroundColor: 'white', 
+  		backgroundColor: 'green',
+  		color: 'white', 
   		font: 'inherit',
   		border: '1px solid blue',
   		padding: '8px',
@@ -57,6 +58,8 @@ class App extends Component {
   		persons = (
 	  		<div>
 	  			{this.state.persons.map((person, index) => {
+	  				// If you put the tag on the next line after return you'll get the following error:
+	  				// Expected an assignment or function call and instead saw an expression  no-unused-expressions.
 	  				return <Person 
 	  				click={() => this.deletePersonHandler(index)}
 	        	name={person.name} 
@@ -66,17 +69,29 @@ class App extends Component {
 	        </Person>
 	  			})}
 	      </div>
-      )
+      );
+
+	  	style.backgroundColor = 'red';
   	}
+
+  	const classes = [];
+  	if(this.state.persons.length <=2){
+  		classes.push('red');
+  	}
+  	if(this.state.persons.length <=1){
+  		classes.push('bold');
+  	}
+
     return (
       <div className="App">
         <h1>Hello this is my first React setup.</h1>
-        {persons}
+        <p className={classes.join(' ')}>This is really working!</p>
         <button 
         	style={style}
         	onClick={this.togglePersonsHandler}>
         	Toggle Persons
         </button>
+        {persons}
       </div>
     );
   }
