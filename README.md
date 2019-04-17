@@ -46,9 +46,13 @@ ___
 * Setting styles dynamically (Javascript style).
 * Setting class names dynamically.
 * Adding and using Radium. Radium is a set of tools to manage inline styles on React elements. It gives you powerful styling capabilities without CSS [3]. Allows use of pseudo selectors and media queries.
-* Enabling CSS modules. 
+* Enabling CSS modules. CSS files in which all class names and animation names are scoped locally by default.
+
+>This is what is meant by styles being scoped. They are scoped to particular templates. If we have a buttons.css file we would import it only into a buttons.js template and a .btn class within would be inaccessible to some other template (e.g. forms.js), unless we imported it specifically there too.[4]
+
 
 
 [1] [React vs Vue.js Comparison of Popular Frameworks](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
 [2] [React Course with Maximilian on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/)
 [3] [Radium](https://github.com/FormidableLabs/radium)
+[4] [What are CSS Modules and why do we need them?](https://css-tricks.com/css-modules-part-1-need/)
