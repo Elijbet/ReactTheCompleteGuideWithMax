@@ -51,6 +51,11 @@ ___
 >This is what is meant by styles being scoped. They are scoped to particular templates. If we have a buttons.css file we would import it only into a buttons.js template and a .btn class within would be inaccessible to some other template (e.g. forms.js), unless we imported it specifically there too.[4]
 
 * Adding pseudo selectors.
+* Working with media queries. 
+* Debugging. Logical errors that give no error message. How to navigate source maps (code you originallywrote that is not the one running in the browser) in that case using stop and step by step chrome debugger.
+* React Developer Tools. Elements in chrome show the DOM elements, while React Dev Tools show the components, as well as props, and state.
+* Error Boundaries to show custom error message instead of having whole application fail; the app will still run, only the problem components will be replaced by the error message. Works only in production. Don't wrap everything in it, just the parts that are likely to fail. 
+* Reworking app for a better project structure: splitting into more components.
 
 
 [1] [React vs Vue.js Comparison of Popular Frameworks](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
