@@ -88,8 +88,15 @@ This form should be used if there is added logic, the other one when changes are
 		}
 	})
 * prop-types plugin is helpful if you distribute your app as a component library to the team. Specifying the props and their types will give an error if they accidentally pass in the wrong data.
+* Using Refs
+* Using Refs with React Hooks
+* Understanding Prop Chain problems
+* Using Context API to pass data from very top to very bottom, without having to pass it through intermediate layers. Wrap all components that need access to this info in AuthContext created. This still allows you to use state, which you need because the component will only update when the state updates.
+* contextType for class based components and useContext() for functional
+* Useful Resources & Links on all that was covered here
 
-[1] [React vs Vue.js Comparison of Popular Frameworks](https://dzone.com/articles/  reactjs-vs-vuejs-comparison-of-popular-frameworks)    
+
+[1] [React vs Vue.js Comparison of Popular Frameworks](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)    
 [2] [React Course with Maximilian on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/)  
 [3] [Radium](https://github.com/FormidableLabs/radium)  
 [4] [What are CSS Modules and why do we need them?](https://css-tricks.com/css-modules-part-1-need/)  
