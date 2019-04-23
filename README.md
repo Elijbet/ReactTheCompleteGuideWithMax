@@ -5,7 +5,7 @@
 * JSX vs HTML. React uses JSX – a declarative JavaScript XML which allows developers to write components leveraging the power of JavaScript, while Vue.js uses HTML templates to create views [1].
 * There’s a Babel plugin to use JSX with Vue, getting us back to a syntax that’s closer to templates.
 
- ### Components & JSX Cheat Sheet
+ #### Components & JSX Cheat Sheet
 ___
 Components are the core building block of React apps. Actually, React really is just a library for creating components in its core.
 
@@ -56,9 +56,42 @@ ___
 * React Developer Tools. Elements in chrome show the DOM elements, while React Dev Tools show the components, as well as props, and state.
 * Error Boundaries to show custom error message instead of having whole application fail; the app will still run, only the problem components will be replaced by the error message. Works only in production. Don't wrap everything in it, just the parts that are likely to fail. 
 * Reworking app for a better project structure: splitting into more components.
+* Stateful components used to be the class based components, but functional components as of late can also manage state through state hooks. Presentational component is a functional component that does not manage state; these should be the majority of your components. By seperating stateful into containers you keep your app manageable. 
 
+>Essentially, a class is a way of grouping functions (as methods) and data (as properties) into a logical unit revolving around a certain kind of thing. If you don't need that grouping, there's no need to make a class. [5]
 
-[1] [React vs Vue.js Comparison of Popular Frameworks](https://dzone.com/articles/reactjs-vs-vuejs-comparison-of-popular-frameworks)  
-[2] [React Course with Maximilian on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/)
-[3] [Radium](https://github.com/FormidableLabs/radium)
-[4] [What are CSS Modules and why do we need them?](https://css-tricks.com/css-modules-part-1-need/)
+* [Hooks section]
+
+* Using the Effect Hook. Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class.If you’re familiar with React class lifecycle methods, you can think of useEffect Hook as componentDidMount, componentDidUpdate, and componentWillUnmount combined.[6]
+
+* Why it doesn't make sense to wrap every component in shouldComponentUpdate and React.memo. If your component depends on data passed from parent and needs to update when the parent updates in most of your components and you run checks all them, you're running unnecesary code all the time that will slow down your app.
+* If the reference to functions might also change, you should include nextProps.changed or nextProps.clicked checks in shouldComponentUpdate as well.
+* So if you need to check for all the props instead then don't use shoudComponentUpdate and use PureComonent which automatically checks for update on any props.
+	import React, {PureComponent} from 'react';
+	class Persons extends PureComponent {
+	}
+* render() does not render directly to the DOM, it's a suggestion on what HTML should look like on the DOM. 
+* [rewatch]
+* React has 2 versions of the virtual DOM, it compares the future one to the real one and only rerenders if differences are found. 
+* Instead of wrapping everything in one div, you can put it in an array, seperate tags with commas, and add a key to each tag. This will have a use case later, when we don't have to redundantly add an extra div around just because React forces us to.
+* HOC (higher order component) and Aux.js. Use <Aux> (and empty component) to wrap all the elements. Use props.children to output the contents within. React 16.2 has a built in Aux component called <React.Fragment>. Or import React, {Component, Fragment} from 'react'; and just use <Fragment>
+* WithClass component is an HOC component that will have a passed in class property. General concept that you have a component that wraps other components, that adds something to it.
+* Another form of HOC can be a function with passed in component and a class, and it can return a function. In this case import it with lower case name, because it's not a component anymore it's a function that returns a component function. So wrap your tags in Aux instead but use this:
+	export default withClass(App, classes.App);\
+This form should be used if there is added logic, the other one when changes are made to JSX. But this is ultimately a semantical thing and is up to you.
+* <WrappedComponent {...props}> is how you pass props to your HOC component.
+* If you have a counter and you depend on the old state to update the state you shouldn't call this.state.counter + 1 in the setState, reason being this is not guaranteed to work. Use special syntax in this case:
+ this.setState((prevState, props) => {
+		return {
+			persons: persons,
+			changeCounter: prevState.counter + 1
+		}
+	})
+* prop-types plugin is helpful if you distribute your app as a component library to the team. Specifying the props and their types will give an error if they accidentally pass in the wrong data.
+
+[1] [React vs Vue.js Comparison of Popular Frameworks](https://dzone.com/articles/  reactjs-vs-vuejs-comparison-of-popular-frameworks)    
+[2] [React Course with Maximilian on Udemy](https://www.udemy.com/react-the-complete-guide-incl-redux/)  
+[3] [Radium](https://github.com/FormidableLabs/radium)  
+[4] [What are CSS Modules and why do we need them?](https://css-tricks.com/css-modules-part-1-need/)  
+[5] [Classes vs. Functions](https://stackoverflow.com/questions/18202818/classes-vs-functions)  
+[6] [Using the Effect Hook](https://reactjs.org/docs/hooks-effect.html)
