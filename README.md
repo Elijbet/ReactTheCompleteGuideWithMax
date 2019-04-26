@@ -48,7 +48,17 @@ ___
 * Adding and using Radium. Radium is a set of tools to manage inline styles on React elements. It gives you powerful styling capabilities without CSS [3]. Allows use of pseudo selectors and media queries.
 * Enabling CSS modules. CSS files in which all class names and animation names are scoped locally by default.
 
->This is what is meant by styles being scoped. They are scoped to particular templates. If we have a buttons.css file we would import it only into a buttons.js template and a .btn class within would be inaccessible to some other template (e.g. forms.js), unless we imported it specifically there too.[4]
+* CSS modules are an unsupported functionality. To enable it, we need to 'eject'.
+>'npm run eject'
+>Note: this is a one-way operation. Once you eject, you can’t go back!
+
+>If you aren’t satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
+
+>Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+>You don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it. [7]
+
+* This is what is meant by styles being scoped. They are scoped to particular templates. If we have a buttons.css file we would import it only into a buttons.js template and a .btn class within would be inaccessible to some other template (e.g. forms.js), unless we imported it specifically there too.[4]
 
 * Adding pseudo selectors.
 * Working with media queries. 
@@ -102,3 +112,4 @@ This form should be used if there is added logic, the other one when changes are
 [4] [What are CSS Modules and why do we need them?](https://css-tricks.com/css-modules-part-1-need/)  
 [5] [Classes vs. Functions](https://stackoverflow.com/questions/18202818/classes-vs-functions)  
 [6] [Using the Effect Hook](https://reactjs.org/docs/hooks-effect.html)
+[7] [facebook/create-react-app](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md)
